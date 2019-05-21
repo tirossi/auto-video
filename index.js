@@ -1,11 +1,24 @@
 var input = require('readline-sync')
+var bot = {
+
+  text: require('./bots/text.js')
+
+}
 
 function start() {
 
   var content = {}
 
-  content.searchTerm = inputSearchTerm()
-  content.searchIndex = inputSearchIndex()	
+  content.searchTerm = {
+    
+    "articleName": inputSearchTerm(),
+    "lang": "pt"	  
+
+  }
+		
+  content.searchIndex = inputSearchIndex()
+
+  bot.text(content)	
 
   function inputSearchTerm() {
 
